@@ -1,9 +1,10 @@
 import React from 'react';
+import './style.css'
 
 export const App = () => {
     return (
-        <div>
-            Base ts proj
+        <div className="App">
+            BASE TS PROJECT
         </div>
     );
 }
