@@ -18,7 +18,7 @@ export const ItemNavi = (props: Navi) => {
             //     color: "#222830"
             // }}
         >
-            <div>
+            <div className="navi_item">
                 <span>{label}</span>
             </div>
         </NavLink>
