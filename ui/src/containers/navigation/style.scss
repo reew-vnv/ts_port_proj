@@ -8,6 +8,13 @@
     background: aliceblue;
     border: 1px solid transparent;
     border-radius: 8px;
+    a {
+      text-decoration: none;
+    }
+    a:visited {
+      text-decoration: none;
+      color: darkgoldenrod;
+    }
     .navi_item {
       margin: 1rem;
     }

@@ -3,12 +3,12 @@ import {Admin, Home} from "./pages";
 export const routes = [
     {
         element: Home,
-        label: 'home',
+        label: 'HOME',
         path: '/home',
     },
     {
         element: Admin,
-        label: 'admin',
+        label: 'ADMIN',
         path: '/admin',
     }
 ]
