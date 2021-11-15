@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {App} from './containers/app';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes, Navigate} from "react-router-dom";
 import {routes} from "./routes";
 import {NotFound} from "./pages";
 
@@ -19,6 +19,7 @@ ReactDOM.render(
                             />
                         );
                     })}
+                <Route path="/" element={<Navigate replace to="/home"/>}/>
                 <Route path='*' element={<NotFound/>}/>
             </Route>
         </Routes>

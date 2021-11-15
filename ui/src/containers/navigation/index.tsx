@@ -1,7 +1,7 @@
 import React from 'react';
 import {routes} from "../../routes";
 import {ItemNavi} from "./item_navi";
-import './style.css';
+import './style.scss';
 
 export const Navigation = () => {
     return (

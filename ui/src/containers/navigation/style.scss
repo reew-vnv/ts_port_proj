@@ -1,15 +1,15 @@
 .navi {
-    display: flex;
-    width: 100%;
-}
-.navi_ul {
+  display: flex;
+  width: 100%;
+  .navi_ul {
     display: flex;
     flex-direction: row;
     width: 100%;
     background: aliceblue;
     border: 1px solid transparent;
     border-radius: 8px;
-}
-.navi_item {
-    margin: 1rem;
+    .navi_item {
+      margin: 1rem;
+    }
+  }
 }
