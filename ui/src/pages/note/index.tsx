@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const NotFound = () => (
+export const Note = () => (
   <div>
-    NOT FOUND
+    Note Page
   </div>
 );

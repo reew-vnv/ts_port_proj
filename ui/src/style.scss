@@ -1,3 +1,18 @@
+@font-face {
+    font-family: 'Acrom Regular';
+    src: local('Acrom Regular'), url('fonts/Acrom/Acrom-Regular.eot');
+    src: local('Acrom Regular'), url('fonts/Acrom/Acrom-Regular.eot?#iefix') format('embedded-opentype'),
+    url('fonts/Acrom/Acrom-Regular.woff') format('woff'),
+    url('fonts/Acrom/Acrom-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background: aliceblue;
+    font-family: 'Acrom Regular', serif;
+    font-size: 18px;
+}
 .app {
     display: flex;
     align-items: center;

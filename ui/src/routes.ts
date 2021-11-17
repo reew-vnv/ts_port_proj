@@ -1,14 +1,14 @@
-import {Admin, Home} from "./pages";
+import { Note, Home } from './pages';
 
 export const routes = [
-    {
-        element: Home,
-        label: 'HOME',
-        path: '/home',
-    },
-    {
-        element: Admin,
-        label: 'ADMIN',
-        path: '/admin',
-    }
-]
+  {
+    element: Home,
+    label: 'HOME',
+    path: '/home',
+  },
+  {
+    element: Note,
+    label: 'NOTE',
+    path: '/note',
+  },
+];

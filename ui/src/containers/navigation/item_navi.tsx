@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 interface Navi {
     path: string,
@@ -7,20 +7,17 @@ interface Navi {
 }
 
 export const ItemNavi = (props: Navi) => {
-    const {
-        path, label
-    } = props;
-    return (
-        <NavLink
-            to={`${path}`}
-            title={label}
-            // activeStyle={{
-            //     color: "#222830"
-            // }}
-        >
-            <div className="navi_item">
-                <span>{label}</span>
-            </div>
-        </NavLink>
-    )
-}
+  const {
+    path, label,
+  } = props;
+  return (
+    <NavLink
+      to={`${path}`}
+      title={label}
+    >
+      <div className="navi_item">
+        <span>{label}</span>
+      </div>
+    </NavLink>
+  );
+};

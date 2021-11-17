@@ -1,13 +1,11 @@
 import React from 'react';
-import '../../style.scss'
-import {Navigation} from "../navigation";
-import {Outlet} from "react-router-dom";
+import '../../style.scss';
+import { Outlet } from 'react-router-dom';
+import { Navigation } from '../navigation';
 
-export const App = () => {
-    return (
-        <div className="app">
-            <Navigation/>
-            <Outlet/>
-        </div>
-    );
-}
+export const App = () => (
+  <div className="app">
+    <Navigation />
+    <Outlet />
+  </div>
+);
