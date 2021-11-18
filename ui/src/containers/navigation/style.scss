@@ -4,10 +4,13 @@
   .navi_ul {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     background: #b5cbdf;
     border: 1px solid transparent;
     border-radius: 8px;
+    padding-left: 1rem;
     a {
       color: darkgoldenrod;
       text-decoration: none;
@@ -15,6 +18,16 @@
     a:visited {
       text-decoration: none;
       color: darkgoldenrod;
+    }
+    a:hover {
+      color: #b79238;
+      text-decoration: none;
+    }
+    .navi_ul_items {
+      display: flex;
+    }
+    .navi-icon {
+      margin-right: 2rem;
     }
     .navi_item {
       margin: 1rem;
