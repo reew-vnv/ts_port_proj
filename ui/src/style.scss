@@ -1,9 +1,9 @@
 @font-face {
     font-family: 'Acrom Regular';
-    src: local('Acrom Regular'), url('fonts/Acrom/Acrom-Regular.eot');
-    src: local('Acrom Regular'), url('fonts/Acrom/Acrom-Regular.eot?#iefix') format('embedded-opentype'),
-    url('fonts/Acrom/Acrom-Regular.woff') format('woff'),
-    url('fonts/Acrom/Acrom-Regular.ttf') format('truetype');
+    src: local('Acrom Regular'), url('tools/fonts/Acrom/Acrom-Regular.eot');
+    src: local('Acrom Regular'), url('tools/fonts/Acrom/Acrom-Regular.eot?#iefix') format('embedded-opentype'),
+    url('tools/fonts/Acrom/Acrom-Regular.woff') format('woff'),
+    url('tools/fonts/Acrom/Acrom-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -11,13 +11,27 @@
 body {
     background: aliceblue;
     font-family: 'Acrom Regular', serif;
+    color: darkgoldenrod;
     font-size: 18px;
+    height: 100vh;
+    margin: 0 1rem 0 1rem;
+    padding: 0;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
 }
 .app {
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     height: 100%;
     width: 100%;
+    .app-content {
+        height: 100%;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
 }
