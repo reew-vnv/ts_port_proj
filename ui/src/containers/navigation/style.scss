@@ -1,6 +1,11 @@
 .navi {
   display: flex;
   width: 100%;
+  .navi_clock {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+  }
   .navi_ul {
     display: flex;
     flex-direction: row;
