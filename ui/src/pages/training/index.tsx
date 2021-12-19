@@ -18,8 +18,6 @@ export const Training = () => {
     setTrain(e.currentTarget.value);
   };
 
-  console.log({ training, train });
-
   return (
     <div className="training">
       {training}
