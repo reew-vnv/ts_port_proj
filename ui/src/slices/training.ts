@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  training: 'Training',
+  training: 'Training hui',
 };
 
 const trainingSlice = createSlice({
