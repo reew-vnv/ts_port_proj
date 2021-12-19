@@ -8,7 +8,7 @@ import { App } from './containers/app';
 import { routes } from './routes';
 import { NotFound } from './pages';
 
-import store from './store-utils/store';
+import { store } from './store';
 
 ReactDOM.render(
   <Provider store={store}>
