@@ -9,6 +9,8 @@
   justify-content: flex-start;
   margin-bottom: 1rem;
   .footer-icon {
+    display: flex;
+    align-items: center;
     margin-left: 2rem;
     cursor: pointer;
   }
