@@ -20,6 +20,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "no-console": "off",
         "react/require-default-props": "off",
         "no-use-before-define": "off",
         "no-unused-vars": "off",

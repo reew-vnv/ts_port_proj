@@ -1,7 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  training: 'Training hui',
+  training: {
+    push_ups: {
+      first_att: 0,
+      second_att: 0,
+      third_att: 0,
+      fourth_att: 0,
+    },
+    squats: {
+      first_att: 0,
+      second_att: 0,
+      third_att: 0,
+      fourth_att: 0,
+    },
+    plank: {
+      first_att: 0,
+      second_att: 0,
+      third_att: 0,
+      fourth_att: 0,
+    },
+  },
 };
 
 const trainingSlice = createSlice({
