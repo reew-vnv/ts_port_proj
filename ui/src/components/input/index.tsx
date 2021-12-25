@@ -6,7 +6,7 @@ interface inputInterface {
     onChange: any,
     label: string,
     disabled?: boolean,
-    value: string,
+    value: string | number | {},
     type?: string,
 }
 
@@ -18,14 +18,18 @@ export const InputComponent = (props: inputInterface) => {
     value = '',
     type = 'string',
   } = props;
+
   return (
-    <Input
-      size="small"
-      value={value}
-      type={type}
-      placeholder={label}
-      disabled={disabled}
-      onChange={onChange}
-    />
+    <div className="input-style">
+      <div>{label}</div>
+      <Input
+        size="small"
+        value={value}
+        type={type}
+        placeholder={label}
+        disabled={disabled}
+        onChange={onChange}
+      />
+    </div>
   );
 };

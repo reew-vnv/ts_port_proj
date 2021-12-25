@@ -5,4 +5,11 @@
     & > * {
         margin: .5rem;
     }
+
+    .training-parts {
+        display: flex;
+        & > * {
+            margin-right: .5rem;
+        }
+    }
 }
