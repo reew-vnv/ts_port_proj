@@ -6,11 +6,11 @@ import {
 import { Provider } from 'react-redux';
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
-import { App } from './containers/app';
-import { routes } from './routes';
-import { NotFound } from './pages';
+import { App } from './client/containers/app';
+import { routes } from './client/routes';
+import { NotFound } from './client/pages';
 
-import { store } from './store';
+import { store } from './client/store';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCn9nmmsM1Sv1gRbACZOyxSQVaz2jGGftU',

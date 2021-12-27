@@ -70,8 +70,6 @@ export const Training = () => {
     }
   };
 
-  console.log(1);
-
   // eslint-disable-next-line consistent-return
   const handleChangeTraining = () => {
     switch (currentTraining) {
