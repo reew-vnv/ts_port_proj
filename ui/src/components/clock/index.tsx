@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './style.scss';
 
-export const Clock = () => {
+export const ClockComponent = () => {
   const setClock = () => {
     const hourHand = document.getElementById('hour')!;
     const minutesHand = document.getElementById('minutes')!;

@@ -20,6 +20,8 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "array-callback-return": "off",
+        "consistent-return": "off",
         "camelcase": "off",
         "no-console": "off",
         "react/require-default-props": "off",

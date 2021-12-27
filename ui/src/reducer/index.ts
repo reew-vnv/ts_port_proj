@@ -1,4 +1,4 @@
-import { trainingReducer } from '../slices/training';
+import { trainingReducer } from '../slices/training_page';
 
 const reducer = {
   trainingReducer,

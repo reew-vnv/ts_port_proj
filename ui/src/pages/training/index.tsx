@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { TStore } from '../../store';
-import { updateTraining } from '../../slices/training';
+import { updateTraining } from '../../slices/training_page';
 import { ButtonComponent, InputComponent, SelectComponent } from '../../components';
 
 import './style.scss';
+import { addTraining, getTraining } from './actions';
 
 const options = [
   { key: 'push ups', text: 'push ups', value: 'push_ups' },
@@ -15,7 +17,11 @@ const options = [
 export const Training = () => {
   const dispatch = useDispatch();
   const [currentTraining, setCurrentTraining] = useState('');
-  const { training } = useSelector((state: TStore) => state.trainingReducer);
+  const { training, resp } = useSelector((state: TStore) => state.trainingReducer);
+
+  useEffect(() => {
+    dispatch(getTraining());
+  }, []);
 
   // eslint-disable-next-line consistent-return
   const handleUpdateCurrentAttempts = (e: any, item: any, flag: string) => {
@@ -63,6 +69,8 @@ export const Training = () => {
       }));
     }
   };
+
+  console.log(1);
 
   // eslint-disable-next-line consistent-return
   const handleChangeTraining = () => {
@@ -115,6 +123,10 @@ export const Training = () => {
     setCurrentTraining(data.value);
   };
 
+  const handleSendTraining = () => {
+    dispatch(addTraining(training));
+  };
+
   return (
     <div className="training">
       <SelectComponent
@@ -127,7 +139,7 @@ export const Training = () => {
         {handleChangeTraining()}
       </div>
       <div className="training-button">
-        <ButtonComponent onClick={console.log('button')} label="Change Training to New Training" />
+        <ButtonComponent onClick={handleSendTraining} label="Add Training" />
       </div>
     </div>
   );
