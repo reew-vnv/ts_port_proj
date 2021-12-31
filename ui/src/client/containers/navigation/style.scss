@@ -30,6 +30,9 @@
     }
     .navi_ul_items {
       display: flex;
+      .active {
+        color: goldenrod;
+      }
     }
     .navi-icon {
       display: flex;

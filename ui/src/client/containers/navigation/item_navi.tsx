@@ -14,6 +14,7 @@ export const ItemNavi = (props: Navi) => {
     <NavLink
       to={`${path}`}
       title={label}
+      className={(navData) => (navData.isActive ? 'active' : '')}
     >
       <div className="navi_item">
         <span>{label}</span>

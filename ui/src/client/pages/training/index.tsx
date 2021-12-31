@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
 import { TStore } from '../../store';
 import { updateTraining } from '../../slices/training_page';
 import { ButtonComponent, InputComponent, SelectComponent } from '../../components';
