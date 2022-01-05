@@ -1,52 +1,50 @@
 import React from 'react';
+import { useTable } from 'react-table';
+
+import './style.scss';
 
 interface tableProps {
     result: any[],
     cells: any[],
-    addThs: any[],
-    customTd: (arg: string) => void,
 }
 
 export const TableComponent = (props: tableProps) => {
   const {
-    cells, addThs = [], customTd, result = [],
+    cells = [], result = [],
   } = props;
 
-  const cellMap = (
-    cell: any,
-    i: React.Key | null | undefined,
-  ) => <th key={i}><span>{cell?.label}</span></th>;
-
-  // eslint-disable-next-line no-shadow
-  const onTableRow = (row: null, cells: any[]) => cells
-    .map((cell: { name: string | number; }, iCell: React.Key | null | undefined) => {
-      if (row !== null) {
-        return (
-          <td key={iCell}>
-            {row[cell?.name] || []}
-          </td>
-        );
-      }
-    });
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+  } = useTable({
+    columns: cells,
+    data: result,
+  });
 
   return (
     <div className="table">
-      <table>
+      <table {...getTableProps()}>
         <thead>
-          <tr>
-            {cells.map((th, i) => (
-              cellMap(th, i)
-            ))}
-            {addThs.map((item) => item)}
-          </tr>
-        </thead>
-        <tbody>
-          {result.map((row, i) => (
-            <tr key={i}>
-              {onTableRow(row, cells)}
-              {customTd(row)}
+          {headerGroups.map((headerGroup: any) => (
+            <tr {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column: any) => (
+                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+              ))}
             </tr>
           ))}
+        </thead>
+        <tbody {...getTableBodyProps()}>
+          {rows.map((row: any) => {
+            prepareRow(row);
+            return (
+              <tr {...row.getRowProps()}>
+                {row.cells.map((cell: any) => <td {...cell.getCellProps()}>{cell.render('Cell')}</td>)}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

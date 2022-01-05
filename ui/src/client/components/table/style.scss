@@ -1,0 +1,37 @@
+.table {
+  overflow: auto;
+  border: 1px solid #b5cbdf;
+  border-radius: 8px;
+  table {
+    display: table;
+    text-align: center;
+    table-layout: fixed;
+    border-spacing: 0;
+    width: 100%;
+    overflow: hidden;
+    overflow-x: auto;
+    background-color: transparent;
+  }
+
+  th {
+    border-bottom: 1px solid #b5cbdf;
+    padding: .5rem;
+  }
+
+  .cell-ths {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .structured-cell-ths {
+    align-items: center;
+    justify-content: center;
+    display: table;
+    text-align: center;
+    table-layout: fixed;
+    width: 100%;
+    & > * {
+      margin: 0 .5rem 0 .5rem;
+    }
+  }
+}

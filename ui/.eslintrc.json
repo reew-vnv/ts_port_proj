@@ -20,6 +20,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "no-plusplus": "off",
         "array-callback-return": "off",
         "consistent-return": "off",
         "camelcase": "off",

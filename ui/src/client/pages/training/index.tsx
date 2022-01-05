@@ -3,9 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { TStore } from '../../store';
 import { updateTraining } from '../../slices/training_page';
 import { ButtonComponent, InputComponent, SelectComponent } from '../../components';
+import { addTraining, getTraining } from './actions';
+import { Journal } from './components';
 
 import './style.scss';
-import { addTraining, getTraining } from './actions';
 
 const options = [
   { key: 'push ups', text: 'push ups', value: 'push_ups' },
@@ -16,7 +17,7 @@ const options = [
 export const Training = () => {
   const dispatch = useDispatch();
   const [currentTraining, setCurrentTraining] = useState('');
-  const { training, resp } = useSelector((state: TStore) => state.trainingReducer);
+  const { training } = useSelector((state: TStore) => state.trainingReducer);
 
   useEffect(() => {
     dispatch(getTraining());
@@ -120,8 +121,9 @@ export const Training = () => {
     setCurrentTraining(data.value);
   };
 
-  const handleSendTraining = () => {
-    dispatch(addTraining(training));
+  const handleSendTraining = async () => {
+    await dispatch(addTraining(training));
+    await dispatch(getTraining());
   };
 
   return (
@@ -138,6 +140,7 @@ export const Training = () => {
       <div className="training-button">
         <ButtonComponent onClick={handleSendTraining} label="Add Training" />
       </div>
+      <Journal />
     </div>
   );
 };

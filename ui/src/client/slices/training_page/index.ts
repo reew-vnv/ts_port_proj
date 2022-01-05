@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  resp: {},
+  result: [],
+
   training: {
     push_ups: {
       first_att: { label: 'first_att', value: 0 },
@@ -25,8 +26,11 @@ const trainingSlice = createSlice({
   name: 'training',
   initialState,
   reducers: {
-    updateTraining:
-    (state, action) => state = action.payload,
+    // eslint-disable-next-line default-param-last
+    updateTraining: (state = initialState, action) => ({
+      ...state,
+      ...action.payload,
+    }),
   },
 });
 
