@@ -8,9 +8,10 @@ export const getTraining = (params?: any) => async (dispatch: any) => {
     params,
   })
     .then((response: any) => {
-      const keysData = Object.keys(response.data)
-        .map((key) => response.data[key]);
-      const preparedData = keysData.reduce((acc, item) => {
+      const entries = Object.entries(response.data || []);
+      const preparedData = entries.reduce((acc: any, currEl: any) => {
+        const item = currEl[1];
+        const objId = currEl[0];
         const { date } = item;
         delete item.date;
         const ov = Object.values(item);
@@ -21,9 +22,20 @@ export const getTraining = (params?: any) => async (dispatch: any) => {
         }, {});
 
         if (date !== undefined) {
-          const pr = Object.assign(result, { date });
+          const pr = Object.assign(result, { date, objId });
           acc.push(pr);
         }
+        return acc;
+      }, []);
+
+      preparedData.reduce((acc: any, item: any) => {
+        if (item.first_plank_att) {
+          item.first_plank_att = new Date(item.first_plank_att * 1000)
+            .toISOString()
+            .substr(11, 8)
+            .slice(3);
+        }
+        acc.push(item);
         return acc;
       }, []);
 
@@ -52,4 +64,13 @@ export const addTraining = (training: any) => async () => {
   }).catch((error) => {
     console.log(error);
   });
+};
+
+export const deleteTraining = (id: string) => async () => {
+  await axios.delete(`${urls.TRAINING}/${id}${urls.FB_EXTENSION}`)
+    .then((resp) => {
+      console.log(resp.data);
+    }).catch((error) => {
+      console.log(error);
+    });
 };

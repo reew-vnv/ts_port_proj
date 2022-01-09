@@ -2,33 +2,33 @@ export const cellControl = ({ add }: any) => {
   const { handleDeleteRow } = add;
   return [
     {
-      Header: 'Дата',
+      Header: 'DATE',
       columns: [
         { Header: '', accessor: 'date' },
       ],
     },
     {
-      Header: 'Отжимания',
+      Header: 'PUSH UPS',
       columns: [
-        { Header: 'Подход 1', accessor: 'first_push_up_att' },
-        { Header: 'Подход 2', accessor: 'second_push_up_att' },
-        { Header: 'Подход 3', accessor: 'third_push_up_att' },
-        { Header: 'Подход 4', accessor: 'fourth_push_up_att' },
+        { Header: 'Set 1', accessor: 'first_push_up_att' },
+        { Header: 'Set 2', accessor: 'second_push_up_att' },
+        { Header: 'Set 3', accessor: 'third_push_up_att' },
+        { Header: 'Set 4', accessor: 'fourth_push_up_att' },
       ],
     },
     {
-      Header: 'Приседания',
+      Header: 'SQUATS',
       columns: [
-        { Header: 'Подход 1', accessor: 'first_squats_att' },
-        { Header: 'Подход 2', accessor: 'second_squats_att' },
-        { Header: 'Подход 3', accessor: 'third_squats_att' },
-        { Header: 'Подход 4', accessor: 'fourth_squats_att' },
+        { Header: 'Set 1', accessor: 'first_squats_att' },
+        { Header: 'Set 2', accessor: 'second_squats_att' },
+        { Header: 'Set 3', accessor: 'third_squats_att' },
+        { Header: 'Set 4', accessor: 'fourth_squats_att' },
       ],
     },
     {
-      Header: 'Планка',
+      Header: 'PLANK',
       columns: [
-        { Header: 'Подход 1', accessor: 'first_plank_att' },
+        { Header: 'Set', accessor: 'first_plank_att' },
       ],
     },
     {
