@@ -3,6 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   result: [],
 
+  ifInputCorrect: true,
+
   training: {
     push_ups: {
       first_att: { label: 'first_att', value: 0 },

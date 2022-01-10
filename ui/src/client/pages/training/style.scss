@@ -13,6 +13,24 @@
         }
     }
 
+    .training-button-result {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        .training-result {
+            margin-right: 1rem;
+            .result-el {
+                margin-right: .5rem;
+                color: #b5cbdf;
+            }
+            & > * {
+                margin-left: .5rem;
+            }
+        }
+    }
+
     .cell-controls {
         cursor: pointer;
     }

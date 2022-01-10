@@ -29,7 +29,7 @@ export const Fields = () => {
             ...push_ups,
             [label]: {
               label,
-              value: parseInt(e, 10),
+              value: e !== '' ? parseInt(e, 10) : 0,
             },
           },
         },
@@ -42,7 +42,7 @@ export const Fields = () => {
             ...squats,
             [label]: {
               label,
-              value: parseInt(e, 10),
+              value: e !== '' ? parseInt(e, 10) : 0,
             },
           },
         },
@@ -55,7 +55,7 @@ export const Fields = () => {
             ...plank,
             [label]: {
               label,
-              value: parseInt(e, 10),
+              value: e !== '' ? parseInt(e, 10) : 0,
             },
           },
         },
@@ -98,6 +98,7 @@ export const Fields = () => {
               key={key}
               label={item.label}
               value={item.value}
+              additionalLabel="Seconds"
               type="number"
               onChange={(e:
                { currentTarget: { value: any; };

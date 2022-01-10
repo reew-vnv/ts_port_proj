@@ -5,9 +5,10 @@ import './style.scss';
 interface inputInterface {
     onChange: any,
     label: string,
-    disabled?: boolean,
     value: string | number | {},
+    disabled?: boolean,
     type?: string,
+    additionalLabel?: any,
 }
 
 export const InputComponent = (props: inputInterface) => {
@@ -17,6 +18,7 @@ export const InputComponent = (props: inputInterface) => {
     disabled = false,
     value = '',
     type = 'string',
+    additionalLabel = '',
   } = props;
 
   return (
@@ -24,10 +26,11 @@ export const InputComponent = (props: inputInterface) => {
       <div>{label}</div>
       <Input
         size="small"
-        value={value}
+        value={type === 'number' ? value && Math.max(0, Number(value)) : value}
         type={type}
         placeholder={label}
         disabled={disabled}
+        label={additionalLabel || null}
         onChange={onChange}
       />
     </div>
