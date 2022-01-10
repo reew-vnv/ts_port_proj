@@ -1,5 +1,5 @@
 export const cellControl = ({ add }: any) => {
-  const { handleDeleteRow } = add;
+  const { handleOpenConfirm } = add;
   return [
     {
       Header: 'DATE',
@@ -36,7 +36,7 @@ export const cellControl = ({ add }: any) => {
       accessor: 'func',
       Cell: ((cell: any) => (
         // eslint-disable-next-line react/react-in-jsx-scope
-        <span className="cell-controls" onClick={() => handleDeleteRow(cell)}>Delete</span>
+        <span className="cell-controls" onClick={() => handleOpenConfirm(cell)}>Delete</span>
       )),
     },
   ];

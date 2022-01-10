@@ -29,7 +29,7 @@ export const Fields = () => {
             ...push_ups,
             [label]: {
               label,
-              value: e,
+              value: parseInt(e, 10),
             },
           },
         },
@@ -42,7 +42,7 @@ export const Fields = () => {
             ...squats,
             [label]: {
               label,
-              value: e,
+              value: parseInt(e, 10),
             },
           },
         },
@@ -55,7 +55,7 @@ export const Fields = () => {
             ...plank,
             [label]: {
               label,
-              value: e,
+              value: parseInt(e, 10),
             },
           },
         },
