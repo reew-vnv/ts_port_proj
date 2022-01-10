@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ButtonComponent } from '../../../../components';
 import { addTraining, getTraining } from '../../actions';
 import { TStore } from '../../../../store';
+import { clearTraining } from '../../../../slices/training_page';
 
 export const Controls = () => {
   const dispatch = useDispatch();
@@ -22,9 +23,9 @@ export const Controls = () => {
     .reduce(
       (acc, item: any) => acc
           + item.first_squats_att
-          + item.second_push_up_att
+          + item.second_squats_att
           + item.third_squats_att
-          + item.fourth_push_up_att,
+          + item.fourth_squats_att,
       0,
     );
 
@@ -36,15 +37,23 @@ export const Controls = () => {
     .toISOString()
     .substr(11, 8);
 
+  const daysOfTraining = result.length;
+
   const handleSendTraining = async () => {
     await dispatch(addTraining(training));
+    await dispatch(clearTraining());
     await dispatch(getTraining());
   };
+
   return (
     <div className="training-button-result">
       <ButtonComponent onClick={handleSendTraining} label="Add Training" />
       {result.length ? (
         <div className="training-result">
+          <span>
+            <span className="result-el">Total Days:</span>
+            {daysOfTraining}
+          </span>
           <span>
             <span className="result-el">Total Push Ups:</span>
             {totalPushUps}

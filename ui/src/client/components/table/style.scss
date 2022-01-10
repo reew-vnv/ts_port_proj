@@ -1,5 +1,6 @@
 .table {
   overflow: auto;
+  max-height: 65vh;
   border: 1px solid #b5cbdf;
   border-radius: 8px;
   table {
@@ -16,6 +17,10 @@
   th {
     border-bottom: 1px solid #b5cbdf;
     padding: .5rem;
+  }
+
+  td {
+    border-bottom: 1px solid #b5cbdf;
   }
 
   .cell-ths {

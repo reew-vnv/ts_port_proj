@@ -33,8 +33,14 @@ const trainingSlice = createSlice({
       ...state,
       ...action.payload,
     }),
+    // eslint-disable-next-line default-param-last
+    clearTraining: (state = initialState) => ({
+      ...state,
+      training: { ...initialState.training },
+    }),
   },
 });
 
 export const trainingReducer = trainingSlice.reducer;
 export const { updateTraining } = trainingSlice.actions;
+export const { clearTraining } = trainingSlice.actions;
