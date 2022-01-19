@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { initialInterface } from './types';
 
 const initialState = {
   result: [],
@@ -22,7 +23,7 @@ const initialState = {
       first_att: { label: 'first_att', value: 0 },
     },
   },
-};
+} as initialInterface;
 
 const trainingSlice = createSlice({
   name: 'training',

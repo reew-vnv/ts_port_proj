@@ -4,8 +4,9 @@ import {
   BrowserRouter, Route, Routes, Navigate,
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { SnackbarProvider } from 'notistack';
 import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
+import { getAuth } from 'firebase/auth';
 import { App } from './client/containers/app';
 import { routes } from './client/routes';
 import { NotFound } from './client/pages';
@@ -23,28 +24,33 @@ const firebaseConfig = {
   measurementId: 'G-B6JMGJX687',
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+export const auth = getAuth();
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          {routes
-            .map(({ path, element: Component }, i) => (
-              <Route
-                key={i}
-                path={`${path}`}
-                element={<Component />}
-              />
-            ))}
-          <Route path="/" element={<Navigate replace to="/home" />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <SnackbarProvider anchorOrigin={{
+      vertical: 'bottom',
+      horizontal: 'right',
+    }}
+    >
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />}>
+            {routes
+              .map(({ path, element: Component }, i) => (
+                <Route
+                  key={i}
+                  path={`${path}`}
+                  element={<Component />}
+                />
+              ))}
+            <Route path="/" element={<Navigate replace to="/home" />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </SnackbarProvider>
   </Provider>,
   document.getElementById('root'),
 );

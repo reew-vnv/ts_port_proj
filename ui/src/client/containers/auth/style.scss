@@ -1,0 +1,16 @@
+.auth_page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 10rem;
+  align-items: center;
+
+  .auth_header {
+    margin-bottom: 2rem;
+    font-size: 22px;
+  }
+  .auth_button {
+    display: flex;
+    margin-top: 1rem;
+  }
+};
