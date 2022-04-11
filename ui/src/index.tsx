@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {
   BrowserRouter, Route, Routes, Navigate,
 } from 'react-router-dom';
@@ -7,6 +6,7 @@ import { Provider } from 'react-redux';
 import { SnackbarProvider } from 'notistack';
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
+import ReactDOM from 'react-dom/client';
 import { App } from './client/containers/app';
 import { routes } from './client/routes';
 import { NotFound } from './client/pages';
@@ -27,7 +27,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
 
-ReactDOM.render(
+const rootElement = document.getElementById('root');
+const root = ReactDOM.createRoot(rootElement as Element);
+root.render(
   <Provider store={store}>
     <SnackbarProvider anchorOrigin={{
       vertical: 'bottom',
@@ -52,5 +54,4 @@ ReactDOM.render(
       </BrowserRouter>
     </SnackbarProvider>
   </Provider>,
-  document.getElementById('root'),
 );

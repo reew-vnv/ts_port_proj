@@ -1,4 +1,6 @@
-import { Note, Home, Training } from './pages';
+import {
+  Note, Home, Training, Testing,
+} from './pages';
 
 export const routes = [
   {
@@ -15,5 +17,10 @@ export const routes = [
     element: Training,
     label: 'TRAINING',
     path: '/training',
+  },
+  {
+    element: Testing,
+    label: 'TESTING `useTransition`',
+    path: '/testing',
   },
 ];
